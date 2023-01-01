@@ -1127,7 +1127,7 @@ def keysym_to_string(keysym):
     return chr(code)
 
 
-class KeyboardEmulation(Output):
+class KeyboardEmulationX11(Output):
 
     class Mapping:
 
@@ -1328,3 +1328,5 @@ class KeyboardEmulation(Output):
             self._custom_mappings_queue.append(mapping)
         return mapping
 
+from .keyboard_emulation_evdev import KeyboardEmulationEvDev as KeyboardEmulation
+    
